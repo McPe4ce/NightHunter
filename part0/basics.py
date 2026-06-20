@@ -11,13 +11,13 @@ def hero_class():
     while(1):
         print("Now, you have the choose from 1 to 4 how you will fight:")
         time.sleep(1)
-        print("1: As a Warrior, fighting for goth chicks")
+        print("[1]: As a Warrior, fighting for goth chicks")
         time.sleep(1)
-        print("2: As a Mage, virgin until your last breath")
+        print("[2]: As a Mage, virgin until your last breath")
         time.sleep(1)
-        print("3: As a Rogue, lost in Texas")
+        print("[3]: As a Rogue, lost in Texas")
         time.sleep(1)
-        print("4: As a Cleric, protector of faith")
+        print("[4]: As a Cleric, protector of faith")
         
         try:
             choice = int(input("Class: "))
