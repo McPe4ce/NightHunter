@@ -1,0 +1,44 @@
+graph TD
+    subgraph Presentation Layer
+        CLI[Game CLI / API Endpoints]
+    end
+
+    subgraph Business Logic Layer
+        Facade[Game Facade]
+        PlayerService[Player Service]
+        CharacterService[Character Service]
+        DungeonService[Dungeon Service]
+        RoomService[Room Service]
+        CombatService[Combat Service]
+        MonsterService[Monster Service]
+    end
+
+    subgraph Persistence Layer
+        PlayerRepo[Player Repository]
+        CharacterRepo[Character Repository]
+        DungeonRepo[Dungeon Repository]
+        RoomRepo[Room Repository]
+        MonsterRepo[Monster Repository]
+        Storage[In-Memory / SQLite]
+    end
+
+    CLI --> Facade
+    Facade --> PlayerService
+    Facade --> CharacterService
+    Facade --> DungeonService
+    Facade --> CombatService
+
+    CharacterService --> RoomService
+    CombatService --> MonsterService
+
+    PlayerService --> PlayerRepo
+    CharacterService --> CharacterRepo
+    DungeonService --> DungeonRepo
+    RoomService --> RoomRepo
+    MonsterService --> MonsterRepo
+
+    PlayerRepo --> Storage
+    CharacterRepo --> Storage
+    DungeonRepo --> Storage
+    RoomRepo --> Storage
+    MonsterRepo --> Storage
